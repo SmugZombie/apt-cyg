@@ -105,7 +105,7 @@ OPTIONS
 +
 
 mapfile version <<+
-apt-cyg version 0.59
+apt-cyg version 0.6
 
 The MIT License (MIT)
 
@@ -492,6 +492,7 @@ function apt-install {
   find /etc/postinstall -name '*.sh' | while read script
   do
     echo Running $script
+    chmod +x $script
     $script
     mv $script $script.done
   done
